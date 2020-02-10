@@ -18,7 +18,7 @@ function run() {
     }
     let f = fs.readFileSync(filePath, "utf8");
     let data = toml.parse(f);
-    fs.writeFileSync(fileName, toml.stringify(setTomlByKey(data, key, value)));
+    fs.writeFileSync(filePath, toml.stringify(setTomlByKey(data, key, value)));
   } catch (error) {}
 }
 
