@@ -11,11 +11,10 @@
     "typescript": "^3.7.5"
   },
   "scripts": {
-    "start": "tsc && node dist/index.js"
+    "build": "tsc"
   },
   "dependencies": {
     "@actions/core": "^1.2.2",
-    "@iarna/toml": "^2.2.3",
-    "toml": "^3.0.0"
+    "@iarna/toml": "^2.2.3"
   }
 }
