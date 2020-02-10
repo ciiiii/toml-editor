@@ -19,7 +19,9 @@ function run() {
     let f = fs.readFileSync(filePath, "utf8");
     let data = toml.parse(f);
     fs.writeFileSync(filePath, toml.stringify(setTomlByKey(data, key, value)));
-  } catch (error) {}
+  } catch (error) {
+    core.setFailed(error.message);
+  }
 }
 
 function setTomlByKey(t: object, key: string, value: any): Jsonmap {
