@@ -30,8 +30,8 @@ All arguments are of type string.
 
 ```toml
 [params]
-hello = "" // key = "params.hello"
+hello = "" # key = "params.hello"
 
 [params.config]
-appId = "" // key = "params.config.appId"
+appId = "" # key = "params.config.appId"
 ```
