@@ -14,7 +14,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@actions/core": "^1.2.6",
+    "@actions/core": "^1.9.1",
     "@iarna/toml": "^2.2.5"
   }
 }
