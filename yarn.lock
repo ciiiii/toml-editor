@@ -28,10 +28,10 @@
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
   integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
 
-"@types/node@^14.11.7":
-  version "14.11.7"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.7.tgz#4d9673b8331ce262628ea89d9ef3964b6c1e5489"
-  integrity sha512-hSEXknS4KiayUdZ7401J/T6eykXHJkDEipnyQMJ4/GstK4kWjbHnwXlcpvIWfPKiEH1JU96DkbzJ1nHRmpmKLw==
+"@types/node@^18.7.15":
+  version "18.7.15"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.7.15.tgz#20ae1ec80c57ee844b469f968a1cd511d4088b29"
+  integrity sha512-XnjpaI8Bgc3eBag2Aw4t2Uj/49lLBSStHWfqKvIuXD7FIrZyMLWp8KuAFHAqxMZYTF9l08N1ctUn9YNybZJVmQ==
 
 ansi-styles@^3.2.1:
   version "3.2.1"
