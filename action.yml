@@ -1,5 +1,5 @@
-name: "toml editor"
-description: "edit a toml file"
+name: "TOML Editor V2"
+description: "Edit a Table/Key in a given TOML file."
 author: "ciii"
 branding:
   icon: "file"
