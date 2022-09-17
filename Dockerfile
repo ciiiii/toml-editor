@@ -8,4 +8,4 @@ LABEL "com.github.actions.color"="blue"
 RUN yarn install
 RUN yarn run build
 
-ENTRYPOINT ["node", "/dist/index.js"]
+ENTRYPOINT ["node", "/dist/src/index.js"]
