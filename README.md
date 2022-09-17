@@ -8,8 +8,8 @@ This is a Github action, you can use it to edit your toml file. Read more about 
 `workflow.yml`
 
 ```yaml
-- name: Edit Toml
-  uses: ciiiii/toml-editor@1.0.0
+- name: TOML Editor V2
+  uses: colathro/toml-editor@1.1.0
   with:
     file: "file/path/xx.toml"
     key: "a.b.c"
