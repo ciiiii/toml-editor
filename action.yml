@@ -16,7 +16,5 @@ inputs:
     required: true
 
 runs:
-  # using: "docker"
-  # image: "Dockerfile"
-  using: "node12"
-  main: "dist/src/index.js"
+  using: "node16"
+  main: "index.js"

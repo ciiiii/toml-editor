@@ -1,11 +1,6 @@
-import {
-  updateToml,
-  parseTomlContent,
-  getTomlValue,
-  stringifyToml,
-} from "../src/index";
+const index = require("./index");
 
-function getTomlString(): string {
+function getTomlString() {
   return `
     key1 = "value1"
     [table1]
@@ -26,10 +21,10 @@ test("long key", () => {
   let value = "newvalue1";
 
   let tomlContent = getTomlString();
-  let tomlObj = parseTomlContent(tomlContent);
+  let tomlObj = index.parseTomlContent(tomlContent);
 
-  updateToml(tomlObj, key, value);
-  let setValue = getTomlValue(tomlObj, key);
+  index.updateToml(tomlObj, key, value);
+  let setValue = index.getTomlValue(tomlObj, key);
 
   expect(setValue === value).toBeTruthy();
 });
@@ -39,13 +34,13 @@ test("short but dont miss", () => {
   let value = "newvalue2";
 
   let tomlContent = getTomlString();
-  let tomlObj = parseTomlContent(tomlContent);
+  let tomlObj = index.parseTomlContent(tomlContent);
 
-  updateToml(tomlObj, key, value);
-  let setValue = getTomlValue(tomlObj, key);
+  index.updateToml(tomlObj, key, value);
+  let setValue = index.getTomlValue(tomlObj, key);
 
   expect(setValue === value).toBeTruthy();
-  expect(value != getTomlValue(tomlObj, "table1.table2.key1"));
+  expect(value != index.getTomlValue(tomlObj, "table1.table2.key1"));
 });
 
 test("net new key", () => {
@@ -53,10 +48,10 @@ test("net new key", () => {
   let value = "newvalue2";
 
   let tomlContent = getTomlString();
-  let tomlObj = parseTomlContent(tomlContent);
+  let tomlObj = index.parseTomlContent(tomlContent);
 
-  updateToml(tomlObj, key, value);
-  let setValue = getTomlValue(tomlObj, key);
+  index.updateToml(tomlObj, key, value);
+  let setValue = index.getTomlValue(tomlObj, key);
 
   expect(setValue === value).toBeTruthy();
 });
@@ -67,10 +62,10 @@ test("long net new key", () => {
   let value = "newvalue2";
 
   let tomlContent = getTomlString();
-  let tomlObj = parseTomlContent(tomlContent);
+  let tomlObj = index.parseTomlContent(tomlContent);
 
-  updateToml(tomlObj, key, value);
-  let setValue = getTomlValue(tomlObj, key);
+  index.updateToml(tomlObj, key, value);
+  let setValue = index.getTomlValue(tomlObj, key);
 
   expect(setValue === value).toBeTruthy();
 });
@@ -80,10 +75,10 @@ test("single existing key", () => {
   let value = "newvalue1";
 
   let tomlContent = getTomlString();
-  let tomlObj = parseTomlContent(tomlContent);
+  let tomlObj = index.parseTomlContent(tomlContent);
 
-  updateToml(tomlObj, key, value);
-  let setValue = getTomlValue(tomlObj, key);
+  index.updateToml(tomlObj, key, value);
+  let setValue = index.getTomlValue(tomlObj, key);
 
   expect(setValue === value).toBeTruthy();
 });
@@ -93,10 +88,10 @@ test("single new key", () => {
   let value = "newvalue2";
 
   let tomlContent = getTomlString();
-  let tomlObj = parseTomlContent(tomlContent);
+  let tomlObj = index.parseTomlContent(tomlContent);
 
-  updateToml(tomlObj, key, value);
-  let setValue = getTomlValue(tomlObj, key);
+  index.updateToml(tomlObj, key, value);
+  let setValue = index.getTomlValue(tomlObj, key);
 
   expect(setValue === value).toBeTruthy();
 });
@@ -106,10 +101,10 @@ test("two existing key", () => {
   let value = "newvalue1";
 
   let tomlContent = getTomlString();
-  let tomlObj = parseTomlContent(tomlContent);
+  let tomlObj = index.parseTomlContent(tomlContent);
 
-  updateToml(tomlObj, key, value);
-  let setValue = getTomlValue(tomlObj, key);
+  index.updateToml(tomlObj, key, value);
+  let setValue = index.getTomlValue(tomlObj, key);
 
   expect(setValue === value).toBeTruthy();
 });
@@ -119,10 +114,10 @@ test("two new key", () => {
   let value = "newvalue2";
 
   let tomlContent = getTomlString();
-  let tomlObj = parseTomlContent(tomlContent);
+  let tomlObj = index.parseTomlContent(tomlContent);
 
-  updateToml(tomlObj, key, value);
-  let setValue = getTomlValue(tomlObj, key);
+  index.updateToml(tomlObj, key, value);
+  let setValue = index.getTomlValue(tomlObj, key);
 
   expect(setValue === value).toBeTruthy();
 });

@@ -1,7 +1,7 @@
-import * as core from "@actions/core";
-import * as path from "path";
-import * as fs from "fs";
-import * as toml from "@iarna/toml";
+const core = require("@actions/core");
+const path = require("node:path");
+const fs = require("node:fs");
+const toml = require("@iarna/toml");
 
 function run() {
   try {
@@ -21,11 +21,7 @@ function run() {
   }
 }
 
-export interface Jsonmap {
-  [key: string]: any;
-}
-
-export function updateToml(tomlObj: Jsonmap, key: string, value: any) {
+function updateToml(tomlObj, key, value) {
   let keys = key.split(".");
 
   if (keys.length == 1) {
@@ -33,7 +29,7 @@ export function updateToml(tomlObj: Jsonmap, key: string, value: any) {
     return;
   }
 
-  let targetTable: any = null;
+  let targetTable = null;
   for (let index = 0; index < keys.length - 1; index++) {
     if (targetTable === null) {
       targetTable = tomlObj[keys[index]];
@@ -48,7 +44,7 @@ export function updateToml(tomlObj: Jsonmap, key: string, value: any) {
   targetTable[keys[keys.length - 1]] = value;
 }
 
-export function getTomlValue(tomlObj: Jsonmap, key: string): string {
+function getTomlValue(tomlObj, key) {
   let keys = key.split(".");
 
   let targetTable = null;
@@ -63,7 +59,7 @@ export function getTomlValue(tomlObj: Jsonmap, key: string): string {
   return targetTable;
 }
 
-export function getTomlContent(filePath: string) {
+function getTomlContent(filePath) {
   if (!fs.existsSync(filePath)) {
     throw new Error(`The toml file does not exist: ${filePath}`);
   }
@@ -71,16 +67,25 @@ export function getTomlContent(filePath: string) {
   return fs.readFileSync(filePath, "utf8");
 }
 
-export function parseTomlContent(tomlContent: string): Jsonmap {
+function parseTomlContent(tomlContent) {
   return toml.parse(tomlContent);
 }
 
-export function stringifyToml(tomlObj: Jsonmap): string {
+function stringifyToml(tomlObj) {
   return toml.stringify(tomlObj);
 }
 
-export function writeTomlObj(tomlObj: Jsonmap, filePath: string) {
+function writeTomlObj(tomlObj, filePath) {
   fs.writeFileSync(filePath, stringifyToml(tomlObj));
 }
+
+module.exports = {
+  updateToml,
+  getTomlValue,
+  getTomlContent,
+  parseTomlContent,
+  stringifyToml,
+  writeTomlObj,
+};
 
 run();
