@@ -26,7 +26,7 @@ All arguments are of type string.
 | key   | Yes      | Key need to modify             |
 | value | Yes      | Value to set                   |
 
-### key example
+### Key Example
 
 ```toml
 [params]
@@ -35,3 +35,21 @@ hello = "" # key = "params.hello"
 [params.config]
 appId = "" # key = "params.config.appId"
 ```
+
+### Development
+
+## Dependencies
+
+`npm install`
+
+`npm i -g @vercel/ncc`
+
+## Testing
+
+`yarn test`
+
+## Building
+
+`ncc build index.js --license licenses.txt`
+
+After building check in dist/index.js.
